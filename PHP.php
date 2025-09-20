@@ -92,7 +92,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     respond_json(['error' => 'Only POST allowed', 'success' => false, 'status' => 'HTTP 405 Method Not Allowed'], 405);
 }
 
-// Gather params
+// Gather POST params
 $apiKey = get_post_param('ApiKey');
 $sessionId = get_post_param('SessionId');
 $channelId = get_post_param('ChannelId');
@@ -120,14 +120,14 @@ if (is_string($requestEmojis)) {
 }
 
 // Normalize the Messages:
-// - if it's JSON array, decode and use that
+// - if it's a JSON array, decode it and use that
 // - if single string, treat as single message
 $newMessages = [];
 if ($messagesParam !== null && $messagesParam !== '') {
     if (is_array($messagesParam)) {
         $newMessages = $messagesParam;
     } elseif (is_string($messagesParam)) {
-        // try to decode JSON
+        // try to decode the JSON
         $maybe = json_decode($messagesParam, true);
         if (is_array($maybe))
             $newMessages = $maybe;
@@ -145,7 +145,7 @@ $existing = load_channel_messages($channelId);
 
 // Append new messages (if any)
 foreach ($newMessages as $m) {
-    // m may be string or object with fields (we accept either)
+    // 'm' may be string or object with fields (we accept either)
     if (is_array($m)) {
         $text = isset($m['message']) ? (string) $m['message'] : (string) ($m['text'] ?? '');
         $msgUser = isset($m['speaker']) ? (string) $m['speaker'] : $speaker;
@@ -194,7 +194,7 @@ $toReturn = array_slice($existing, -MAX_RETURN_MESSAGES);
 
 // Strip the timestamp or keep? 
 // Requirement lists sessionId, messageId, speaker, userId, message, icon.
-// We'll include exactly those fields (and optionally timestamp).
+// We'll include exactly those fields (and optionally a timestamp).
 $response = array_map(function ($m) {
     return [
         'sessionId' => $m['sessionId'] ?? null,
