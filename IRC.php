@@ -6,7 +6,7 @@
 // ---------------------------------------------------------------- //
 
 $apiKey = "F0BA8E63-1CC5-4709-8D30-C2089B5A46E9"; // the key from the main endpoint
-$sessionId = uniqid("VTIL.", true); // unique per visitor (new session each load)
+$sessionId = uniqid("IRC.", true); // unique per visitor (new session each load)
 $defaultChannel = "Place2";
 ?>
 
