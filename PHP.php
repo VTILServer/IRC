@@ -8,7 +8,7 @@
 // Accepts: ApiKey, SessionId, ChannelId, Messages, RequestEmojis
 // Returns a JSON array of messages with: sessionId, messageId, speaker, userId, message, icon
 
-define('DATA_DIR', __DIR__ . '/data');      // make sure the webserver can write here!
+define('DATA_DIR', __DIR__ . '/data'); // make sure the webserver can write here!
 define('MAX_RETURN_MESSAGES', 100);
 
 // Map of valid API keys to userIds (extend as needed)

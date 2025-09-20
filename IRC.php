@@ -5,8 +5,8 @@
 // Last Updated: 09/20/2025
 // ---------------------------------------------------------------- //
 
-$apiKey = "F0BA8E63-1CC5-4709-8D30-C2089B5A46E9"; // the key from the main endpoint
-$sessionId = uniqid("IRC.", true); // unique per visitor (new session each load)
+$apiKey = "F0BA8E63-1CC5-4709-8D30-C2089B5A46E9"; // The key from the main endpoint
+$sessionId = uniqid("IRC.", true); // Unique per visitor (new session each load)
 $defaultChannel = "Place2";
 ?>
 
@@ -121,7 +121,7 @@ $defaultChannel = "Place2";
         form.append("ApiKey", apiKey);
         form.append("SessionId", sessionId);
         form.append("ChannelId", channelId);
-        form.append("Messages", ""); // no new message, just fetch
+        form.append("Messages", ""); // No new messages, just fetch!
         form.append("RequestEmojis", "true");
 
         let res = await fetch(apiUrl, { method: "POST", body: form });
