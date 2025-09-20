@@ -1,0 +1,1 @@
+# Mainly used for Void Script Builder, but can be configured and used elsewhere.
