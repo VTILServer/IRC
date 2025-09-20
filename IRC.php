@@ -5,7 +5,7 @@
 // Last Updated: 09/20/2025
 // ---------------------------------------------------------------- //
 
-$apiKey = "F0BA8E63-1CC5-4709-8D30-C2089B5A46E9"; // The key from the main endpoint
+$apiKey = "F0BA8E63-1CC5-4709-8D30-C2089B5A46E9"; // The key for the main endpoint
 $sessionId = uniqid("IRC.", true); // Unique per visitor (new session each load)
 $defaultChannel = "Place2";
 ?>
