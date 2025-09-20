@@ -1,1 +1,1 @@
-# Mainly used for Void Script Builder, but can be configured and used elsewhere.
+# Mainly used for Void Script Builder 2018, but can be configured and used elsewhere.
